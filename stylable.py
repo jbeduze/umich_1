@@ -31,7 +31,7 @@ def Holder_container_2(vartitle):
                
                 margin: 0px;
                 border: 2px solid #ff6c3a;
-                box-shadow: 1px 1px 6px 3px #6a7483;
+                box-shadow: 1px 1px 12px 10px #6a7483;
                 height: 400px;   
             }
             """,
