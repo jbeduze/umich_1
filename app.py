@@ -1,61 +1,83 @@
 import streamlit as st
 from streamlit_extras.stylable_container import stylable_container
+
 import stylable as styl
+import stylable_layout as styll
+
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 
-Athlete_Profile, Team_veiw, AI_Assistant = st.tabs(["Athlete Profile", "Team Veiw", "AI Assistant"])
-colA1, colA2, colA3, colA4, colA5 = st.columns([1,16,1,24,1])
+colA1, colA2, colA3, colA4, colA5 = st.columns([1, 16, 1, 24, 1])
+
 with colA2:
-    with st.container(height= 600, border= True):
-        col1a, col1b = st.columns([1,2])
-        with col1a:
-            with st.container(height=300, border=True):
-                st.markdown("Profile picture")
-        with col1b:
-            with st.container(height=100, border= True):
-                st.markdown("Athlete Name")
-        with col1b:
-            with st.container(height=200, border=True):
-                st.markdown("Health info/ if recovering form injury")
-        with st.container(height=235, border=True):
-            st.markdown("general Athlete profile info")
+    styl.Holder_container_1(styll.fill_colA2)
+
 with colA4:
-    with st.container(height=700, border=True):
-        col2a, col2b, col2c, col2d, col2e = st.columns([1,24,1,16,1])
-        with col2b:
-            with st.container(height=400, border=True):
-                st.markdown("upper left box in right large container")
-        with col2d:
-            with st.container(height=400, border=True):
-                st.markdown("upper box on left in right large container")
-        with st.container(height=235, border=True):
-            st.markdown("bottom box in right large container")
-colB1, colB2, colB3, colB4 = st.columns([8,4,4,1])
+    styl.Holder_container_2(styll.fill_colA4)
+
+colB1, colB2, colB3, colB4 = st.columns([8, 4, 4, 1])
+
 with colB1:
-    with st.container(height=500, border=True):
-        with st.container(height=225, border=True):
-            st.markdown("bottom left top")
-        with st.container(height=225, border=True):
-            st.markdown("bottom left bottom")
+    styl.Holder_container_3(styll.fill_colB1)
+
 with colB2:
-    with st.container(height=400, border=True):
-        st.markdown("bottom right left")
+    styl.data_container_1(styll.fill_colB2)
+
 with colB3:
-    with st.container(height=400, border=True):
-        st.markdown("bottom right right")
+    styl.data_container_1(styll.fill_colB3)
+
+# Athlete_Profile, Team_veiw, AI_Assistant = st.tabs(["Athlete Profile", "Team Veiw", "AI Assistant"])
+# colA1, colA2, colA3, colA4, colA5 = st.columns([1,16,1,24,1])
+# with colA2:
+#     with styl.Holder_container_1(styll.fill_col1a):
+#         col1a, col1b = st.columns([1,2])
+#         with col1a:
+#             with styl.data_container_1(styll.fill_col1a):
+#                 st.markdown("Profile picture")
+#         with col1b:
+#             with st.container(height=100, border= True):
+#                 st.markdown("Athlete Name")
+#         with col1b:
+#             with st.container(height=200, border=True):
+#                 st.markdown("Health info/ if recovering form injury")
+#         with st.container(height=235, border=True):
+#             st.markdown("general Athlete profile info")
+# with colA4:
+#     with st.container(height=700, border=True):
+#         col2a, col2b, col2c, col2d, col2e = st.columns([1,24,1,16,1])
+#         with col2b:
+#             with st.container(height=400, border=True):
+#                 st.markdown("upper left box in right large container")
+#         with col2d:
+#             with st.container(height=400, border=True):
+#                 st.markdown("upper box on left in right large container")
+#         with st.container(height=235, border=True):
+#             st.markdown("bottom box in right large container")
+# colB1, colB2, colB3, colB4 = st.columns([8,4,4,1])
+# with colB1:
+#     with st.container(height=500, border=True):
+#         with st.container(height=225, border=True):
+#             st.markdown("bottom left top")
+#         with st.container(height=225, border=True):
+#             st.markdown("bottom left bottom")
+# with colB2:
+#     with st.container(height=400, border=True):
+#         st.markdown("bottom right left")
+# with colB3:
+#     with st.container(height=400, border=True):
+#         st.markdown("bottom right right")
 
 
-# st.header("Wrestling app")
+# # st.header("Wrestling app")
 
-col1, col2 = st.columns([7,10])
+# col1, col2 = st.columns([7,10])
 
-with col1:
-    vartitle_1 = "Profile information"
-    styl.Holder_container_1(vartitle_1)
-    styl.Holder_container_2(vartitle_1)
-    styl.data_container_1(vartitle_1)
+# with col1:
+#     vartitle_1 = "Profile information"
+#     styl.Holder_container_1(vartitle_1)
+#     styl.Holder_container_2(vartitle_1)
+#     styl.data_container_1(vartitle_1)
 
 # with col1:
 #     vartext = "Coach and AI Analysis"

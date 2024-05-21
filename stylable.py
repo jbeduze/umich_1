@@ -1,9 +1,9 @@
 import streamlit as st
 from streamlit_extras.stylable_container import stylable_container
 
-def Holder_container_1(vartitle):
+def Holder_container_1(content_func):
     with stylable_container(
-        key="pazazz",
+        key="Holder_container_1",
         css_styles="""
             {
                 background-color: #6a7483;
@@ -16,19 +16,18 @@ def Holder_container_1(vartitle):
             }
             """,
     ):
-        st.container(height=300)
+        content_func()
 
 
 
-def Holder_container_2(vartitle):
+def Holder_container_2(content_func):
     with stylable_container(
-        key="simple_box",
+        key="Holder_container_2",
         css_styles="""
             {
                 background-color: #161d28;
                 color: #161d28;
-                border-radius: 10px;
-               
+                border-radius: 10px;  
                 margin: 0px;
                 border: 2px solid #ff6c3a;
                 box-shadow: 1px 1px 12px 10px #6a7483;
@@ -36,12 +35,11 @@ def Holder_container_2(vartitle):
             }
             """,
     ):
-        with st.container(height=400):
-            st.markdown(vartitle)
+        content_func()
 
-def data_container_1(data):
+def data_container_1(content_func):
     with stylable_container(
-        key="container_with_border",
+        key="data_container_1",
         css_styles="""
             {
                 border: 1px solid rgba(49, 51, 63, 0.2);
@@ -51,11 +49,11 @@ def data_container_1(data):
             }
             """,
     ):
-        st.markdown(data)
+        content_func()
 
-def Holder_container_3(vartitle):
+def Holder_container_3(content_func):
     with stylable_container(
-        key="pazazz",
+        key="Holder_container_3",
         css_styles="""
             {
                 background-color: #f0f0f0;
@@ -68,4 +66,4 @@ def Holder_container_3(vartitle):
             }
             """,
     ):
-        st.container(height=300)
+        content_func ()
